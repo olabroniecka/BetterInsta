@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^comments/', include('comments.urls')),
     url(r'^likes/', include('likes.urls')),
+    url(r'^main/', include('main.urls')),
     url(r'^photos/', include('photos.urls')),
     url(r'^users/', include('users.urls')),
 ]

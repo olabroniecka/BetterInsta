@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+
+
+<html>
+    <head><meta charset="utf-8"></head>
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <body>
+        <h1>Hipsta</h1>
+        {% block content %}
+
+        {% endblock %}
+        <footer>
+            {% if user.is_authenticated %}
+                {{ user.username }} [<a href="{% url 'user-logout' %}">Wyloguj</a>]
+            {% else %}
+                Witaj Anonie! [<a href="{% url 'user-login' %}">Zaloguj</a>]
+            {% endif %}
+        </footer>
+    </body>
+</html>
