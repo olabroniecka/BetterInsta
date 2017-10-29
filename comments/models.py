@@ -1,10 +1,15 @@
 from django.db import models
 
+from photos.models import Photo
+from users.models import User
+
 # Create your models here.
 
 
 class Comment(models.Model):
-    name_user = models.ForeignKey(User)
-    title = models.CharField(max_length=64)
-    comment = models.TextField()
+    user = models.ForeignKey(User)
+    comment = models.CharField(max_length=250)
+    date_created = models.DateTimeField()
+    photo = models.ForeignKey(Photo)
+
 
